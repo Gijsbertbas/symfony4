@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="cards">
+        {% if notifications|length %}
+        <div class="card-body">
+            <h5>Unread notifications</h5>
+        </div>
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <a class="btn btn-block btn-default btn-link btn-outline-info"
+                   href="{{ path('notification_acknowledge_all') }}">
+                    Mark all as read
+                </a>
+            </li>
+        </ul>
+
+        <ul class="list-group list-group-flush">
+            {%  for notification in notifications %}
+                <li class="list-group-item">
+                    <a class="btn btn-sm btn-primary float-right"
+                       href="{{ path('notification_acknowledge', {'id': notification.id }) }}">
+                        OK
+                    </a>
+                    {%  if notification is like %}
+                        <a href="{{ path('micro_post_user', {'username': notification.likeBy.username}) }}">
+                            {{  notification.likeBy.username }}
+                        </a>
+                        likes your
+                        <a href="{{ path('micro_post_post', {'id': notification.microPost.id}) }}">post</a>
+                    {% elseif notification is follow %}
+                        <a href="{{ path('micro_post_user', {'username': notification.follower.username}) }}">
+                            {{  notification.follower.username }}
+                        </a>
+                        is now following you.
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+        {%  else %}
+        <div class="card-body">
+            You have no notifications.
+        </div>
+        {% endif %}
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <a class="btn btn-block btn-default btn-link btn-outline-info"
+                   href="{{ path('notification_reverse_acknowledge_all') }}">
+                    Mark all as unseen
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+{% endblock %}

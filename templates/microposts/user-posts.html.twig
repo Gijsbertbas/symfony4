@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="card-group py-2">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">
+                   {{ user.fullName }}
+                     <small class="text-muted">. @{{ user.username }}</small>
+                </h5>
+                {% if user != app.user %}
+                    {% if user.followers.contains(app.user) == false %}
+                        <a href="{{ path('following_follow', {'id': user.id }) }}" class="btn btn-outline-primary">Follow</a>
+                    {% else %}
+                        <a href="{{ path('following_unfollow', {'id': user.id }) }}" class="btn btn-outline-warning">Unfollow</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="card-group py-2">
+        <div class="card">
+            <div class="card-body">
+                <h5>{{ 'Followers'|transchoice(user.followers|length) }}</h5>
+
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for follower in user.followers %}
+                    <li class="list-group-item">
+                        <a href="{{ path('micro_post_user', {'username': follower.username}) }}">
+                            {{ follower.username }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5>Following</h5>
+
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for follow in user.following %}
+                    <li class="list-group-item">
+                        <a href="{{ path('micro_post_user', {'username': follow.username}) }}">
+                            {{ follow.username }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    {% for post in posts %}
+        {{  include('microposts/raw_post.html.twig', { 'post': post }) }}
+    {% endfor %}
+
+{%  endblock %}

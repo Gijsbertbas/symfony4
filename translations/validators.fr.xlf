@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="Pu9obbF" resname="This e-mail is already used">
+        <source>This e-mail is already used</source>
+        <target>Cet e-mail est déjà pris</target>
+      </trans-unit>
+      <trans-unit id="P_JwFKa" resname="This username has been used already">
+        <source>This username has been used already</source>
+        <target>Ce nom d'utilisateur est déjà utilisé</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

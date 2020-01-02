@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="v9QCsvb" resname="Sign in">
+        <source>Sign in</source>
+        <target>Se connecter</target>
+      </trans-unit>
+      <trans-unit id="SPDT05f" resname="Sign out">
+        <source>Sign out</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="eIARgzp" resname="Notifications">
+        <source>Notifications</source>
+        <target>Notifications</target>
+      </trans-unit>
+      <trans-unit id="rNpsyuv" resname="Add new">
+        <source>Add new</source>
+        <target>Ajouter une nouvelle</target>
+      </trans-unit>
+      <trans-unit id=".Je91OR" resname="Recent updates">
+        <source>Recent updates</source>
+        <target>Mises à jour récentes</target>
+      </trans-unit>
+      <trans-unit id="piTUk.l" resname="I agree...">
+        <source>I agree...</source>
+        <target>J'accepte les conditions d'utilisation</target>
+      </trans-unit>
+      <trans-unit id="47ienTP" resname="Username">
+        <source>Username</source>
+        <target>Nom d'utilisateur</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="BZb3_Li" resname="Repeated password">
+        <source>Repeated password</source>
+        <target>Mot de passé</target>
+      </trans-unit>
+      <trans-unit id="8Tpkui." resname="Full name">
+        <source>Full name</source>
+        <target>Nom et prénom</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="odXaDic" resname="You have not notifications">
+        <source>You have not notifications</source>
+        <target>Vous n'avez pas de notifications</target>
+      </trans-unit>
+      <trans-unit id="PxSFWEL" resname="email.registration">
+        <source>email.registration</source>
+        <target><![CDATA[<h3>Bienvenue dans l'application!</h3>
+<p>Bonjour %name%! Vous êtes inscrit dans l'application!</p>
+<p>Veuillez confirmer le compte en cliquant sur ce lien
+<a href="%confirm-link%">lien</a>.
+</p>
+<p>Pour vous connecter, accédez à <a href="%login-link%">page de connexion</a>.</p>
+<p>Merci!</p>]]></target>
+      </trans-unit>
+      <trans-unit id="oUWrNCp" resname="Followers">
+        <source>Followers</source>
+        <target>{0} No followers|{1} follower|]1,Inf[ %count% followers</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

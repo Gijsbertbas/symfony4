@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for message in app.flashes('notice') %}
+        <div class="alert    alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% if usersToFollow|length > 0 %}
+        <p>You currently don't follow anyone, care to follow any of the following?</p>
+        {% for user in usersToFollow %}
+            <a href="{{ path('micro_post_user', {'username': user.username}) }}">@{{ user.username }}</a>,
+        {% endfor %}
+    {% else %}
+        {#<small class="d-block text-right mt-3">#}
+            {#<a href="{{ path('micro_post_add') }}">Add new</a>#}
+        {#</small>#}
+
+        <h6 class="border-bottom border-gray pb2 mb-0">Recent updates</h6>
+
+        {% for post in posts %}
+            {{  include('microposts/raw_post.html.twig', { 'post': post }) }}
+        {% endfor %}
+
+    {% endif %}
+
+{%  endblock %}
