@@ -15,6 +15,7 @@ doctrine:
             charset: utf8mb4
             collate: utf8mb4_unicode_ci
 
+        url: '%env(resolve:DATABASE_URL)%'
         schema_filter: ~^(?!sessions)~
         host: '%env(RDS_HOSTNAME)%'
         port: '%env(RDS_PORT)%'
