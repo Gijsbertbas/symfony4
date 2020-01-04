@@ -22,7 +22,7 @@ final class Version20191223193531 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE micro_post ADD user_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE micro_post ADD user_id INT NOT NULL');
         $this->addSql('ALTER TABLE micro_post ADD CONSTRAINT FK_2AEFE017A76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
         $this->addSql('CREATE INDEX IDX_2AEFE017A76ED395 ON micro_post (user_id)');
     }
