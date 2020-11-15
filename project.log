@@ -1,0 +1,11 @@
+# deploying on aws elastic beanstalk
+
+# for apache I needed to install apache-pack
+composer require symfony/apache-pack
+
+# via ebextensions I installed node and yarn to build the frontend
+# base on https://stackoverflow.com/a/52858293
+
+# setup a free account with mailtrap.io (github credentials)
+
+# added my ip address to the security group of the ES generated RDS database so I can acces using Sequel Pro
